@@ -1,0 +1,12 @@
+apiVersion: skaffold/v2beta4
+kind: Config
+build:
+  artifacts:
+  - image: hellowd
+    context: services/hellowd
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+      - services/hellowd/manifest.yaml
